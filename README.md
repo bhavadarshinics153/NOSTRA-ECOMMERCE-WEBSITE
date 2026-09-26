@@ -31,6 +31,6 @@ Google Fonts
 Project Link
 
 🔗 Live Website:
-UrbanAura Fashion Website
+ https://bhavadarshinics153.github.io/NOSTRA-ECOMMERCE-WEBSITE/
 
 Thank you for visiting!
