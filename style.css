@@ -1,0 +1,1105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #1D232C;
+    background-color: white;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+
+/* =========================
+   TOP PROMOTION
+========================= */
+
+.top-promo {
+    background-color: #1D232C;
+    color: #E2E1E1;
+    padding: 7px 15px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.top-promo p {
+    margin: 0;
+}
+
+#promoCloseBtn {
+    margin-left: 8%;
+    cursor: pointer;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.main-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.brand-name {
+    font-size: 28px;
+}
+
+.desktop-menu {
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item {
+    margin: 0;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #1D232C;
+}
+
+.menu-item a:hover {
+    text-decoration: underline;
+}
+
+.mobile-menu-button {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.mobile-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: #1D232C;
+    color: #E2E1E1;
+    padding: 20px;
+    z-index: 30;
+    transform: translateX(-100%);
+    transition: 0.5s;
+}
+
+.mobile-panel.active {
+    transform: translateX(0);
+}
+
+.panel-close-area {
+    text-align: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.mobile-menu-list {
+    margin-top: 30px;
+}
+
+.mobile-menu-item {
+    margin-bottom: 25px;
+}
+
+.mobile-menu-item a {
+    text-decoration: none;
+    color: #E2E1E1;
+}
+
+.mobile-menu-item a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   MAIN WRAPPER
+========================= */
+
+.page-wrapper {
+    width: 100%;
+    padding: 0 15px;
+}
+
+
+/* =========================
+   HERO SLIDER
+========================= */
+
+.hero-slider {
+    position: relative;
+    width: 98%;
+    height: 500px; /* 350px → 300px */
+    overflow: hidden;
+    margin: 30px auto 0;
+    border-radius: 8px;
+}
+
+.hero-images {
+    display: flex;
+    width: 100%;
+    transition: 1s;
+}
+
+.hero-slide {
+    min-width: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    z-index: 5;
+    top: 22%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+
+.hero-content h1 {
+    font-size: clamp(25px, 5vw, 65px);
+}
+
+.hero-content h4 {
+    font-size: clamp(18px, 2.5vw, 35px);
+    margin-top: 5px;
+}
+
+.hero-content button,
+.arrival-card button,
+.offer-details button,
+.newsletter-area button {
+    border: none;
+    background-color: white;
+    color: #1D232C;
+    padding: 10px 22px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.hero-arrow {
+    position: absolute;
+    top: 40%;
+    z-index: 8;
+    color: white;
+    cursor: pointer;
+}
+
+.hero-arrow i {
+    font-size: clamp(35px, 8vw, 90px);
+}
+
+.hero-prev {
+    left: 4%;
+}
+
+.hero-next {
+    right: 4%;
+}
+
+
+/* =========================
+   BRANDS
+========================= */
+
+.brand-section {
+    margin-top: 5vw;
+}
+
+.brand-section h2,
+.section-title {
+    margin-bottom: 25px;
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+    align-items: center;
+}
+
+.brand-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+}
+
+.brand-card img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.reveal-section {
+    margin-top: 5vw;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: 2s;
+}
+
+.reveal-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.service-heading h2 {
+    font-size: clamp(20px, 2.5vw, 35px);
+}
+
+.service-heading p {
+    font-size: 15px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.service-card {
+    background-color: #F2F4F7;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.service-card i {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.service-card h4 {
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.service-card p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NEW ARRIVALS
+========================= */
+
+.section-title {
+    font-size: clamp(22px, 3vw, 32px);
+}
+
+.arrival-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.arrival-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    height: 350px;
+}
+
+.arrival-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
+.arrival-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    opacity: 0.6;
+    border-radius: 5px;
+}
+
+.arrival-card button {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   MOST WANTED
+========================= */
+
+.wanted-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.wanted-card {
+    position: relative;
+    min-width: 220px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.wanted-card > img:first-child {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
+.discount-tag {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: red;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 2;
+}
+
+.wishlist-icon {
+    position: absolute;
+    width: 30px !important;
+    height: 30px;
+    object-fit: contain;
+    bottom: 15px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 5;
+    transition: 0.3s;
+}
+
+
+/* =========================
+   LIMITED OFFER
+========================= */
+
+.offer-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1D232C;
+    color: #E2E1E1;
+    padding: 25px;
+    gap: 30px;
+}
+
+.offer-picture {
+    width: 50%;
+}
+
+.offer-picture img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.offer-details {
+    width: 50%;
+    padding: 30px;
+}
+
+.offer-details h2 {
+    font-size: clamp(25px, 4vw, 45px);
+}
+
+.offer-details h4 {
+    font-size: clamp(16px, 2vw, 25px);
+    margin-top: 10px;
+}
+
+.offer-details button {
+    margin-top: 20px;
+}
+
+
+/* =========================
+   NEWSLETTER
+========================= */
+
+.newsletter-area {
+    margin-top: 5vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.newsletter-area h2 {
+    font-size: clamp(22px, 3vw, 35px);
+}
+
+.newsletter-area p {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.newsletter-input {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.email-field {
+    width: 90%;
+    max-width: 1000px;
+    padding: 12px;
+    border: 3px solid #1D232C;
+}
+
+.email-field:focus {
+    outline: none;
+}
+
+.subscribe-area button {
+    background-color: #1D232C;
+    color: #E2E1E1;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+    margin-top: 5vw;
+    padding: 40px;
+    background-color: #1D232C;
+    color: #E2E1E1;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-details {
+    max-width: 450px;
+}
+
+.footer-details h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.footer-details p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.social-links i {
+    font-size: 25px;
+}
+
+.copyright {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+
+/* =========================
+   COLLECTIONS PAGE
+========================= */
+
+.collection-page {
+    width: 100%;
+    padding: 40px 5vw;
+}
+
+.collection-layout {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+}
+
+.filter-panel {
+    width: 220px;
+    flex-shrink: 0;
+    border-right: 1px solid #d0d0d0;
+    padding-right: 30px;
+}
+
+.filter-heading {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-options label {
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.filter-options input {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.catalog-area {
+    flex: 1;
+}
+
+.catalog-search {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #222;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.catalog-search input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-family: Poppins, sans-serif;
+}
+
+.catalog-search i {
+    font-size: 18px;
+}
+
+.catalog-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.catalog-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.catalog-card img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.catalog-card h3 {
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.catalog-card p {
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.product-tags {
+    display: none;
+}
+
+
+/* =========================
+   CONTACT PAGE
+========================= */
+
+.contact-page {
+    width: 100%;
+    min-height: 550px;
+    padding: 60px 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contact-box {
+    width: 100%;
+    max-width: 750px;
+    background-color: #f5f5f5;
+    padding: 40px;
+}
+
+.contact-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    width: 100%;
+}
+
+.contact-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.contact-field label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.contact-field input,
+.contact-field textarea {
+    width: 100%;
+    border: 1px solid #222;
+    outline: none;
+    padding: 12px;
+    font-family: Poppins, sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.contact-field textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-submit {
+    border: none;
+    background-color: #1d252f;
+    color: white;
+    padding: 12px 30px;
+    font-family: Poppins, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.contact-submit:hover {
+    background-color: #000;
+}
+
+/* =========================
+   TABLET + MOBILE
+========================= */
+
+@media screen and (max-width: 900px) {
+
+    .desktop-menu {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    /* Hero */
+    .hero-slider {
+        width: 94%;
+        height: 280px;
+        margin-top: 25px;
+    }
+
+    .brand-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .arrival-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .arrival-card {
+        height: 320px;
+    }
+
+    .wanted-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wanted-card {
+        min-width: 0;
+        height: 320px;
+    }
+
+    .offer-area {
+        flex-direction: column;
+    }
+
+    .offer-picture,
+    .offer-details {
+        width: 100%;
+    }
+
+    .offer-details {
+        padding: 15px;
+    }
+
+    .collection-page {
+        padding: 30px;
+    }
+
+    .collection-layout {
+        gap: 25px;
+    }
+
+    .filter-panel {
+        width: 180px;
+        padding-right: 20px;
+    }
+
+    .catalog-items {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .catalog-card img {
+        height: 280px;
+    }
+
+    .contact-page {
+        padding: 40px 30px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 600px) {
+
+    .top-promo {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    #promoCloseBtn {
+        margin-left: 5%;
+    }
+
+    .main-nav {
+        padding: 12px 15px;
+    }
+
+    .brand-name {
+        font-size: 23px;
+    }
+
+    .page-wrapper {
+        padding: 0 10px;
+    }
+
+    /* Hero */
+    .hero-slider {
+        width: 96%;
+        height: 240px;
+        margin-top: 20px;
+    }
+
+    .hero-content {
+        top: 20%;
+    }
+
+    .hero-content h1 {
+        font-size: 24px;
+    }
+
+    .hero-content h4 {
+        font-size: 16px;
+    }
+
+    .hero-content button {
+        padding: 7px 14px;
+        font-size: 12px;
+        margin-top: 7px;
+    }
+
+    .hero-arrow i {
+        font-size: 40px;
+    }
+
+    .brand-section {
+        margin-top: 35px;
+    }
+
+    .brand-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 10px;
+    }
+
+    .brand-card {
+        font-size: 13px;
+    }
+
+    .brand-card img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .service-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .service-heading p {
+        font-size: 13px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 15px;
+    }
+
+    .service-card i {
+        font-size: 28px;
+    }
+
+    .arrival-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .arrival-card {
+        height: 250px;
+    }
+
+    .arrival-card button {
+        padding: 7px 10px;
+        font-size: 10px;
+    }
+
+    .wanted-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+    }
+
+    .wanted-card {
+        min-width: 190px;
+        height: 270px;
+    }
+
+    .discount-tag {
+        font-size: 11px;
+        padding: 2px 7px;
+    }
+
+    .wishlist-icon {
+        width: 28px !important;
+        height: 28px;
+        bottom: 10px;
+    }
+
+    .offer-area {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .offer-details {
+        padding: 10px;
+    }
+
+    .offer-details button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .newsletter-area {
+        padding: 10px 0;
+    }
+
+    .newsletter-area p {
+        font-size: 12px;
+    }
+
+    .email-field {
+        width: 100%;
+    }
+
+    .newsletter-area button {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .site-footer {
+        padding: 30px 20px;
+    }
+
+    .footer-details h2 {
+        font-size: 24px;
+    }
+
+    .footer-details p {
+        font-size: 12px;
+    }
+
+    .social-links i {
+        font-size: 20px;
+    }
+
+    .collection-page {
+        padding: 25px 20px;
+    }
+
+    .collection-layout {
+        flex-direction: column;
+    }
+
+    .filter-panel {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #d0d0d0;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    .filter-options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .catalog-items {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .catalog-card img {
+        height: 230px;
+    }
+
+    .catalog-card h3 {
+        font-size: 14px;
+    }
+
+    .catalog-card p {
+        font-size: 13px;
+    }
+
+    .contact-page {
+        min-height: auto;
+        padding: 30px 20px 50px;
+    }
+
+    .contact-box {
+        padding: 25px 20px;
+    }
+
+    .contact-title {
+        font-size: 26px;
+    }
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media screen and (max-width: 400px) {
+
+    .brand-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .arrival-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .arrival-card {
+        height: 230px;
+    }
+
+    .wanted-card {
+        min-width: 170px;
+        height: 250px;
+    }
+
+    /* Hero */
+    .hero-slider {
+        width: 96%;
+        height: 210px;
+    }
+
+    .hero-content h1 {
+        font-size: 20px;
+    }
+
+    .hero-content h4 {
+        font-size: 13px;
+    }
+
+    .hero-arrow i {
+        font-size: 30px;
+    }
+
+    .catalog-items {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-card img {
+        height: 350px;
+    }
+
+    .filter-options {
+        grid-template-columns: 1fr;
+    }
+}
